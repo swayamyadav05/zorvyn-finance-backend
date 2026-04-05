@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Compiled TypeScript output
+dist/
+
+# Environment files — never commit secrets
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor folders
+.github
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage reports
+coverage/
+
+# MongoDB memory server downloads
+.cache/
