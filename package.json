@@ -1,7 +1,7 @@
 {
   "name": "zorvyn-finance-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Finance data processing and access control backend",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -10,6 +10,9 @@
     "seed": "tsx seed/seed.ts",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"
+  },
+  "engines": {
+    "node": ">=24.0.0"
   },
   "keywords": [],
   "author": "",

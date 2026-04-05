@@ -23,7 +23,7 @@ app.use(helmet());
 
 app.use(
   cors({
-    origin: env.CLIENT_ORIGIN,
+    origin: env.CLIENT_ORIGIN === "*" ? true : env.CLIENT_ORIGIN,
     credentials: true,
   }),
 );
