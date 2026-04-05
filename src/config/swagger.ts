@@ -16,8 +16,14 @@ const options: swaggerJsdoc.Options = {
 
     servers: [
       {
-        url: `http://localhost:${env.PORT}/api/v1`,
-        description: "Development server",
+        url:
+          env.NODE_ENV === "production"
+            ? "https://zorvyn-finance-backend.up.railway.app/api/v1"
+            : `http://localhost:${env.PORT}/api/v1`,
+        description:
+          env.NODE_ENV === "production"
+            ? "Production"
+            : "Development",
       },
     ],
 
@@ -148,7 +154,10 @@ const options: swaggerJsdoc.Options = {
     security: [{ BearerAuth: [] }],
   },
 
-  apis: ["./src/modules/**/*.routes.ts"],
+  apis:
+    env.NODE_ENV === "production"
+      ? ["./dist/modules/**/*.routes.js"]
+      : ["./src/modules/**/*.routes.ts"],
 };
 
 export const swaggerSpec = swaggerJsdoc(options);
