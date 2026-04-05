@@ -92,6 +92,10 @@ _Global error handler._ All route handlers are wrapped with `asyncHandler`, whic
 
 ## Setup Instructions
 
+**Live deployment:** The API is live at `https://zorvyn-finance-backend.up.railway.app`. The database is pre-seeded — you can test all endpoints immediately using the credentials in the [Seed Data](#seed-data) section without running anything locally.
+
+**Local setup** (if you want to run it yourself):
+
 **Prerequisites:** Node.js 22+, a MongoDB connection string (local or Atlas)
 
 **1. Clone the repository**
@@ -152,7 +156,9 @@ All variables are validated with Zod at startup. The server exits immediately wi
 
 ## API Documentation
 
-Interactive Swagger UI: `http://localhost:5000/api/v1/docs`
+Interactive Swagger UI (live): https://zorvyn-finance-backend.up.railway.app/api/v1/docs
+
+The API is deployed and live. All endpoints can be tested interactively directly from the browser. Click the **Authorize** button in the Swagger UI and paste a Bearer token obtained from `POST /auth/login` using the seeded credentials below.
 
 All endpoints are versioned under `/api/v1`. Protected endpoints require an `Authorization: Bearer <accessToken>` header.
 
